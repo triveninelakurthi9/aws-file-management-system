@@ -3,7 +3,11 @@ const router = express.Router();
 
 const upload = require("../middleware/upload");
 const protect = require("../middleware/authMiddleware");
-const { uploadFile, getMyFiles } = require("../controllers/fileController");
+const {
+    uploadFile,
+    getMyFiles,
+    deleteFile
+} = require("../controllers/fileController");
 
 router.post(
     "/upload",
@@ -13,5 +17,6 @@ router.post(
 );
 
 router.get("/", protect, getMyFiles);
+router.delete("/:id", protect, deleteFile);
 
 module.exports = router;
