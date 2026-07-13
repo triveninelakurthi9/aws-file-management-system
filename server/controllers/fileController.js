@@ -220,11 +220,42 @@ const searchFiles = async (req, res) => {
         });
     }
 };
+const getStorageUsage = async (req, res) => {
+    try {
+        const files = await File.find({
+            user: req.user.id
+        });
+
+        const totalFiles = files.length;
+
+        const storageUsed = files.reduce((total, file) => {
+            return total + file.fileSize;
+        }, 0);
+
+        const storageUsedMB = (storageUsed / (1024 * 1024)).toFixed(2);
+
+        res.status(200).json({
+            success: true,
+            totalFiles,
+            storageUsed,
+            storageUsedMB
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+    }
+};
 module.exports = {
     uploadFile,
     getMyFiles,
     deleteFile,
     downloadFile,
     renameFile,
-    searchFiles
+    searchFiles,
+    getStorageUsage
 };
