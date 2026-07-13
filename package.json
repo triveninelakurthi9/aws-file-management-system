@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@aws-sdk/s3-request-presigner": "^3.1085.0",
     "validator": "^13.15.35"
   }
 }

@@ -6,7 +6,8 @@ const protect = require("../middleware/authMiddleware");
 const {
     uploadFile,
     getMyFiles,
-    deleteFile
+    deleteFile,
+     downloadFile
 } = require("../controllers/fileController");
 
 router.post(
@@ -17,6 +18,7 @@ router.post(
 );
 
 router.get("/", protect, getMyFiles);
+router.get("/download/:id", protect, downloadFile);
 router.delete("/:id", protect, deleteFile);
 
 module.exports = router;
