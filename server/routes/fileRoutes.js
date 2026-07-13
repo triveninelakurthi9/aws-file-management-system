@@ -8,7 +8,8 @@ const {
     getMyFiles,
     deleteFile,
      downloadFile,
-     renameFile
+     renameFile,
+     searchFiles
 } = require("../controllers/fileController");
 
 router.post(
@@ -21,6 +22,7 @@ router.post(
 router.get("/", protect, getMyFiles);
 router.get("/download/:id", protect, downloadFile);
 router.put("/:id", protect, renameFile);
+router.get("/search", protect, searchFiles);
 router.delete("/:id", protect, deleteFile);
 
 module.exports = router;

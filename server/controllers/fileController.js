@@ -196,10 +196,35 @@ const renameFile = async (req, res) => {
         });
     }
 };
+const searchFiles = async (req, res) => {
+    try {
+        const { query } = req.query;
+
+        const files = await File.find({
+            user: req.user.id,
+            originalName: { $regex: query, $options: "i" }
+        });
+
+        res.status(200).json({
+            success: true,
+            count: files.length,
+            files
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+    }
+};
 module.exports = {
     uploadFile,
     getMyFiles,
     deleteFile,
     downloadFile,
-    renameFile
+    renameFile,
+    searchFiles
 };
