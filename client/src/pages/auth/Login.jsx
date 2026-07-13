@@ -45,7 +45,7 @@ function Login() {
 
       const response = await loginUser(data);
 
-      login(response.token);
+      login(response.token, response.user);
 
       toast.success(`Welcome back, ${response.user.name}!`);
 
