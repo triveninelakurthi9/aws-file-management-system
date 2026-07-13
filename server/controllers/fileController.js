@@ -32,13 +32,13 @@ const uploadFile = async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error);
+    console.error("Rename Error:", error);
 
-        res.status(500).json({
-            success: false,
-            message: "Server Error"
-        });
-    }
+    res.status(500).json({
+        success: false,
+        message: error.message
+    });
+}
 };
 
 
@@ -150,9 +150,56 @@ const downloadFile = async (req, res) => {
         });
     }
 };
+const renameFile = async (req, res) => {
+    try {
+        console.log("BODY:", req.body);
+        console.log("PARAMS:", req.params);
+        console.log("USER:", req.user);
+        console.log(req.headers);
+        console.log(req.body);
+        const { originalName } = req.body;
+
+        const file = await File.findById(req.params.id);
+
+        if (!file) {
+            return res.status(404).json({
+                success: false,
+                message: "File not found"
+            });
+        }
+
+        if (file.user.toString() !== req.user.id) {
+            return res.status(403).json({
+                success: false,
+                message: "Unauthorized"
+            });
+        }
+
+        file.originalName = originalName;
+
+        await file.save();
+
+        res.status(200).json({
+            success: true,
+            message: "File renamed successfully",
+            file
+        });
+
+    } catch (error) {
+        console.error("========== RENAME ERROR ==========");
+        console.error(error);
+        console.error("==================================");
+
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
 module.exports = {
     uploadFile,
     getMyFiles,
     deleteFile,
-    downloadFile
+    downloadFile,
+    renameFile
 };
