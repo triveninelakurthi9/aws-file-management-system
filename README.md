@@ -2,13 +2,13 @@
 
 A web-based file management system that allows users to securely upload, store, organize, and manage their files using Amazon Web Services (AWS) S3 as the cloud storage backend. Built with a React.js frontend and a Node.js/Express backend.
 
-> 🚧 **Status: Work in Progress** — this project is under active development and not yet feature-complete. Core functionality is still being built and tested.
+> ✅ **Status: Core features complete** — file upload, download, delete, authentication, and browsing are implemented. Production deployment pending.
 
 ## Overview
 
 Traditional file storage solutions can be expensive and hard to scale. This project explores building a lightweight, scalable file management system using AWS S3's cloud infrastructure, giving users a simple interface to manage their files without worrying about local storage limitations.
 
-## Planned Features
+## Features
 
 - Upload files directly to AWS S3 from the browser
 - Download files securely from cloud storage
@@ -47,7 +47,7 @@ aws-file-management-system/
 ├── package.json
 └── package-lock.json
 
-## How It Works (Planned Architecture)
+## How It Works
 
 1. User uploads a file through the React frontend.
 2. The file is sent to the Express backend via a REST API call.
@@ -122,4 +122,5 @@ This project is open source and available for learning purposes.
 Email: triveninelakurthi5@gmail.com
 GitHub: https://github.com/triveninelakurthi9
 LinkedIn: https://linkedin.com/in/triveninelakurthi
+
 
