@@ -123,12 +123,3 @@ Email: triveninelakurthi5@gmail.com
 GitHub: https://github.com/triveninelakurthi9
 LinkedIn: https://linkedin.com/in/triveninelakurthi
 
----
-
-## About Section (for GitHub repo sidebar)
-
-**Description:**
-A file management system built with AWS S3 for cloud storage, React, and Node.js. Work in progress.
-
-**Topics:**
-aws s3 react nodejs expressjs file-management cloud-storage work-in-progress
