@@ -1,47 +1,134 @@
 # AWS File Management System
 
-A web-based file management system that uses AWS S3 for cloud file storage, with a React client and Node.js/Express server.
+A web-based file management system that allows users to securely upload, store, organize, and manage their files using Amazon Web Services (AWS) S3 as the cloud storage backend. Built with a React.js frontend and a Node.js/Express backend.
 
-> 🚧 **Status: Work in Progress** — this project is under active development and not yet feature-complete.
+> 🚧 **Status: Work in Progress** — this project is under active development and not yet feature-complete. Core functionality is still being built and tested.
+
+## Overview
+
+Traditional file storage solutions can be expensive and hard to scale. This project explores building a lightweight, scalable file management system using AWS S3's cloud infrastructure, giving users a simple interface to manage their files without worrying about local storage limitations.
 
 ## Planned Features
 
-- Upload, download, and delete files from AWS S3
-- File organization and browsing interface
-- User authentication
-- Secure access to stored files
+- Upload files directly to AWS S3 from the browser
+- Download files securely from cloud storage
+- Delete and manage stored files
+- Browse and organize uploaded files in a clean UI
+- User authentication and authorization
+- Secure, access-controlled file storage
+- File metadata tracking (name, size, upload date)
 
 ## Tech Stack
 
-- **Frontend:** React.js
-- **Backend:** Node.js, Express.js
-- **Cloud Storage:** AWS S3
+**Frontend**
+- React.js
+- HTML5, CSS3
+- Axios (for API requests)
+
+**Backend**
+- Node.js
+- Express.js
+- REST API architecture
+
+**Cloud & Storage**
+- AWS S3 (Simple Storage Service)
+- AWS SDK for JavaScript
 
 ## Project Structure
 
 aws-file-management-system/
-├── client/     # React frontend
-├── server/     # Node.js/Express backend
+├── client/          # React frontend application
+│   ├── src/
+│   └── public/
+├── server/          # Node.js/Express backend
+│   ├── routes/
+│   └── controllers/
+├── .gitignore
+├── package.json
+└── package-lock.json
+
+## How It Works (Planned Architecture)
+
+1. User uploads a file through the React frontend.
+2. The file is sent to the Express backend via a REST API call.
+3. The backend uses the AWS SDK to upload the file to an S3 bucket.
+4. File metadata is stored and returned to the frontend for display.
+5. Users can view, download, or delete files through the interface.
 
 ## Getting Started
+
+### Prerequisites
+- Node.js and npm installed
+- An AWS account with an S3 bucket configured
+- AWS access key and secret key
+
+### Installation
 
 Clone the repository:
 
 git clone https://github.com/triveninelakurthi9/aws-file-management-system.git
 
-Install dependencies for both client and server:
+Install frontend dependencies:
 
-cd client && npm install
-cd ../server && npm install
+cd client
+npm install
 
-## About Section Description
+Install backend dependencies:
 
-A file management system built with AWS S3 for cloud storage. Work in progress.
+cd ../server
+npm install
 
-## About Section Topics
+### Environment Variables
 
-aws s3 react nodejs expressjs file-management work-in-progress
+Create a `.env` file in the `server` directory with your AWS credentials:
 
-## Status
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_REGION=your_bucket_region
+AWS_BUCKET_NAME=your_bucket_name
 
-This project is being actively built out. Contributions, suggestions, and feedback are welcome.
+### Running the Project
+
+Start the backend server:
+
+cd server
+npm start
+
+Start the frontend:
+
+cd client
+npm start
+
+## Roadmap
+
+- [ ] Complete file upload functionality
+- [ ] Implement file download and delete
+- [ ] Add user authentication
+- [ ] Build file browsing/organization UI
+- [ ] Add file preview support
+- [ ] Deploy to production
+
+## Contributing
+
+This is a personal learning project, but suggestions, feedback, and contributions are always welcome. Feel free to open an issue or submit a pull request.
+
+## License
+
+This project is open source and available for learning purposes.
+
+## Contact
+
+**Nelakurthi Triveni**
+Email: triveninelakurthi5@gmail.com
+GitHub: https://github.com/triveninelakurthi9
+LinkedIn: https://linkedin.com/in/triveninelakurthi
+
+---
+
+## About Section (for GitHub repo sidebar)
+
+**Description:**
+A file management system built with AWS S3 for cloud storage, React, and Node.js. Work in progress.
+
+**Topics:**
+aws s3 react nodejs expressjs file-management cloud-storage work-in-progress
