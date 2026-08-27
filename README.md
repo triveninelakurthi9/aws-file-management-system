@@ -101,11 +101,11 @@ npm start
 
 ## Roadmap
 
-- [ ] Complete file upload functionality
-- [ ] Implement file download and delete
-- [ ] Add user authentication
-- [ ] Build file browsing/organization UI
-- [ ] Add file preview support
+- [x] Complete file upload functionality
+- [x] Implement file download and delete
+- [x] Add user authentication
+- [x] Build file browsing/organization UI
+- [x] Add file preview support
 - [ ] Deploy to production
 
 ## Contributing
